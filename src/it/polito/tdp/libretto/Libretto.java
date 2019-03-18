@@ -39,15 +39,40 @@ public class Libretto {
 		return null;
 		
 	}
+	/**
+	 * seleziona un sottoinsiem di voti che hanno il punteggio specificato
+	 * @param voto
+	 * @return
+	 */
 //	ritorna la lista con i voti e poi dovro stamparla pero è piu versatile separiamo la ricerca dalla formattazione del risultato
 	public List<Voti> cercaVoti(int voto){
 		List<Voti> result=new ArrayList<Voti>();
-		for(Voti v: this.voti)
+		for(Voti v: this.voti) {
 			if(v.getPunti()==voto) {
 				result.add(v);
 			}
-				
+		}
+		
 		return result;
 		
 	}
+	/**
+	 * ricerca un  {@link} Voti} relativo al corso di cui e specjfjcato il nome
+	 * 
+	 * @param nomeEsame
+	 * @return {@link voto}
+	 */
+	public Voti cercaEsami(String nomeEsame) {
+		for(Voti v:this.voti) {
+			// usassi == confronterei la posizione nella memoria degli oggetti e non il contenuto si può usare solo con gli int
+			// compare to confronta lettera per lettera per vederese uno e < o > ma non si usa per tuti gli oggetti usarlo al posto di equals
+			// per pigrizia e un errore
+			if(v.getCorso().equals(nomeEsame)) {
+				return v;
+			}
+		}
+		return null;
+				
+	}
+	
 }

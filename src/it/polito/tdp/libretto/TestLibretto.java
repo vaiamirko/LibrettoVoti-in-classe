@@ -35,6 +35,10 @@ public class TestLibretto {
 // abbiamo in tutto sempre 10 voti abbiamo aggiunto ad una lista un oggetto che gia c'era nel creare result 
 //		sto usando oggetti che gia avevo sto utilizzando semplicemente i reference agli oggetti 
 		
+		Voti a1= libr.cercaEsami("Analsi I");
+		Voti a2=libr.cercaEsami("Analisi III");
+		System.out.println(a1);
+		System.out.println(a2);
 	}
 
 }
