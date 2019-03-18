@@ -30,8 +30,24 @@ public class Libretto {
 		
 		
 	}
-	
-	
-	
-	
+//	stampa i voti
+	public void StampaVoti(int voto) {
+		
+	}
+//	ritorna una string con un elenco di voti e poi dovro stamparla
+	public String StampaVoti2 (int voto) {
+		return null;
+		
+	}
+//	ritorna la lista con i voti e poi dovro stamparla pero è piu versatile separiamo la ricerca dalla formattazione del risultato
+	public List<Voti> cercaVoti(int voto){
+		List<Voti> result=new ArrayList<Voti>();
+		for(Voti v: this.voti)
+			if(v.getPunti()==voto) {
+				result.add(v);
+			}
+				
+		return result;
+		
+	}
 }

@@ -1,6 +1,7 @@
 package it.polito.tdp.libretto;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class TestLibretto {
 /**
@@ -29,8 +30,11 @@ public class TestLibretto {
 		libr.add(new Voti(27,"Programmazione ad Oggetti",LocalDate.of(2019, 01, 25)));
 		
 		
+		List<Voti> venticinque=libr.cercaVoti(25);
+		System.out.println(venticinque);
+// abbiamo in tutto sempre 10 voti abbiamo aggiunto ad una lista un oggetto che gia c'era nel creare result 
+//		sto usando oggetti che gia avevo sto utilizzando semplicemente i reference agli oggetti 
 		
-
 	}
 
 }
