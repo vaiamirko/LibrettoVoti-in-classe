@@ -30,6 +30,11 @@ public class Voti {
 	public void setData(LocalDate data) {
 		this.data = data;
 	}
+	@Override
+//	scelto il metodo formst dalla classe tendina per vderlo in questo formato
+	public String toString() {
+		return String.format("Voti [voto=%s, corso=%s, data=%s]", voto, corso, data);
+	}
 	
 	
 	

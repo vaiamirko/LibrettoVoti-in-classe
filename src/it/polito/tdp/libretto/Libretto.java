@@ -19,9 +19,14 @@ public class Libretto {
 		
 		
 	}
-	
+	/**
+	 * aggiunge un nuovo voto al libretto
+	 * 
+	 * @param v il{@link Voto} da aggiungere
+	 */
 
 	public void add(Voti v) {
+		voti.add(v);
 		
 		
 	}
