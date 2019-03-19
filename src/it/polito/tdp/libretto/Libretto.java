@@ -63,15 +63,24 @@ public class Libretto {
 	 * @return {@link voto}
 	 */
 	public Voti cercaEsami(String nomeEsame) {
+		/*
 		for(Voti v:this.voti) {
 			// usassi == confronterei la posizione nella memoria degli oggetti e non il contenuto si può usare solo con gli int
 			// compare to confronta lettera per lettera per vederese uno e < o > ma non si usa per tuti gli oggetti usarlo al posto di equals
 			// per pigrizia e un errore
 			if(v.getCorso().equals(nomeEsame)) {
 				return v;
-			}
+			}*/
+		// meglio usare un voto fittizio e cercare l'indice sapendo che tanto equals vede 
+		//solo il nome del corso e indexof si basa su equals
+			Voti voto=new Voti(0,nomeEsame,null);
+			int pos=this.voti.indexOf(voto);
+			if(pos==-1)
+				return null;
+			else
+				return this.voti.get(pos);
+		
 		}
-		return null;}
 		
 	/**
 	 * dato un {@link Voti} determina se esite già un voto con uguale corso e uguale punteggio
@@ -79,6 +88,13 @@ public class Libretto {
 	 * @return {@code true} se ha trovato un corso e punteggio uguali , {@code false} se non ha trovato ilcorso o o ha trovato con voto diverso
 	 */
 	public boolean esisteGiaVoto(Voti v) {
+		int pos=this.voti.indexOf(v);
+		if(pos==-1)
+			return false;
+			else 
+				return ((v.getPunti()==this.voti.get(pos).getPunti()));
+					
+		/* fatto con le resource ma sopra lo abbiamo riscritto sempre basandoci su index of
 		Voti trovato =this.cercaEsami(v.getCorso());
 		if(trovato==null)
 			return false;
@@ -86,7 +102,7 @@ public class Libretto {
 			return true;}
 		else {
 			return false;}
-		
+		*/
 		}
 		
 		
