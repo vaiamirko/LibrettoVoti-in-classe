@@ -35,6 +35,31 @@ public class Voti {
 	public String toString() {
 		return String.format("Voti [punti=%s, corso=%s, data=%s]", punti, corso, data);
 	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((corso == null) ? 0 : corso.hashCode());
+		return result;
+	}
+	// aggiungo il metodo equals per confrontare il nome del coros per dare una regola di distinzione di due oggetti
+	// resuorce -- hash code e equals e dico cosa voglio
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Voti other = (Voti) obj;
+		if (corso == null) {
+			if (other.corso != null)
+				return false;
+		} else if (!corso.equals(other.corso))
+			return false;
+		return true;
+	}
 	
 	
 	

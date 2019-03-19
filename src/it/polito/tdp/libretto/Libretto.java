@@ -71,8 +71,29 @@ public class Libretto {
 				return v;
 			}
 		}
-		return null;
-				
-	}
+		return null;}
+		
+	/**
+	 * dato un {@link Voti} determina se esite già un voto con uguale corso e uguale punteggio
+	 * @param v
+	 * @return {@code true} se ha trovato un corso e punteggio uguali , {@code false} se non ha trovato ilcorso o o ha trovato con voto diverso
+	 */
+	public boolean esisteGiaVoto(Voti v) {
+		Voti trovato =this.cercaEsami(v.getCorso());
+		if(trovato==null)
+			return false;
+		if(trovato.getPunti()==v.getPunti()) {
+			return true;}
+		else {
+			return false;}
+		
+		}
+		
+		
+		
+	
+		
+		
+	
 	
 }
